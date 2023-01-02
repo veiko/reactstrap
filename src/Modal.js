@@ -555,6 +555,7 @@ class Modal extends React.Component {
                 ),
                 cssModule,
               )}
+              aria-modal="true"
               innerRef={innerRef}
             >
               {external}

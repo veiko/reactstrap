@@ -29,6 +29,16 @@ describe('Modal', () => {
     expect(screen.getByText(/yo/i)).toBeInTheDocument();
   });
 
+  it('should have accessible properties', () => {
+    render(
+      <Modal isOpen toggle={toggle}>
+        Yo!
+      </Modal>,
+    );
+
+    expect(screen.getByRole('dialog')).toBeAccessibleDialog();
+  });
+
   it('should render with the class "modal-dialog"', () => {
     render(
       <Modal isOpen toggle={toggle}>
