@@ -42,11 +42,12 @@ function AccordionHeader(props) {
     cssModule,
   );
 
+  const collapsed = !(Array.isArray(open)
+    ? open.includes(targetId)
+    : open === targetId);
   const buttonClasses = mapToCssModules(
     classNames('accordion-button', {
-      collapsed: !(Array.isArray(open)
-        ? open.includes(targetId)
-        : open === targetId),
+      collapsed,
     }),
     cssModule,
   );
@@ -54,6 +55,8 @@ function AccordionHeader(props) {
   return (
     <Tag {...attributes} className={classes} ref={innerRef}>
       <button
+        aria-controls={`body-${targetId}`}
+        aria-expanded={!collapsed}
         type="button"
         className={buttonClasses}
         onClick={() => toggle(targetId)}

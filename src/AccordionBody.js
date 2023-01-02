@@ -50,6 +50,7 @@ function AccordionBody(props) {
       {...attributes}
       className={classes}
       ref={innerRef}
+      id={`body-${accordionId}`}
       isOpen={
         Array.isArray(open) ? open.includes(accordionId) : open === accordionId
       }
