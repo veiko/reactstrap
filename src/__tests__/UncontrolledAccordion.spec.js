@@ -2,6 +2,7 @@ import React from 'react';
 import { render, waitFor, screen } from '@testing-library/react';
 import user from '@testing-library/user-event';
 import '@testing-library/jest-dom';
+import { axe } from 'jest-axe';
 import {
   UncontrolledAccordion,
   AccordionItem,
@@ -9,14 +10,14 @@ import {
   AccordionBody,
 } from '..';
 
-beforeEach(() => {
-  jest.useFakeTimers();
-});
+// beforeEach(() => {
+//   jest.useFakeTimers();
+// });
 
-afterEach(() => {
-  jest.runOnlyPendingTimers();
-  jest.useRealTimers();
-});
+// afterEach(() => {
+//   jest.runOnlyPendingTimers();
+//   jest.useRealTimers();
+// });
 
 describe('UncontrolledAccordion', () => {
   const accordionItems = [
@@ -113,5 +114,24 @@ describe('UncontrolledAccordion', () => {
         'show',
       );
     });
+  });
+
+  it.only('should have accessible properties', async () => {
+    render(
+      <UncontrolledAccordion data-testid="accordion">
+        {accordionItems}
+      </UncontrolledAccordion>,
+    );
+    expect(screen.getByTestId('accordion')).toBeAccessibleAccordion();
+  });
+
+  it.only('should have no a11y violations', async () => {
+    const { container } = render(
+      <UncontrolledAccordion data-testid="accordion">
+        {accordionItems}
+      </UncontrolledAccordion>,
+    );
+
+    expect(await axe(container)).toHaveNoViolations();
   });
 });
