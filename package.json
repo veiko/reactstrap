@@ -308,7 +308,7 @@
     "eslint-plugin-react": "^7.30.0",
     "eslint-plugin-storybook": "^0.6.1",
     "holderjs": "^2.9.3",
-    "jest-a11y": "^1.19.1",
+    "jest-a11y": "^1.19.2",
     "jest-axe": "^7.0.0",
     "json-loader": "^0.5.7",
     "microbundle": "^0.13.3",

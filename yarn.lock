@@ -12235,10 +12235,10 @@ iterate-value@^1.0.2:
     es-get-iterator "^1.0.2"
     iterate-iterator "^1.0.1"
 
-jest-a11y@^1.19.1:
-  version "1.19.1"
-  resolved "https://registry.yarnpkg.com/jest-a11y/-/jest-a11y-1.19.1.tgz#2906c0b9faa48798ab147db0afd975392af1a189"
-  integrity sha512-viT8dL/eHMVXLOhyCeL7RSOo/ExYHTrVYFCiqUKzDY3Bss1B+jUP1PhSDVs0RBY5RZ+9WgJAtoTasFWu4Hl8Fg==
+jest-a11y@^1.19.2:
+  version "1.19.2"
+  resolved "https://registry.yarnpkg.com/jest-a11y/-/jest-a11y-1.19.2.tgz#763505b2274d82966b47be0f64479379f4c339ab"
+  integrity sha512-guh2sJK7Zh/XIvZSHfHVM4YlGHaY9ggJwMRL5Qx9ZC2RR8LfwJovz8KqFHavOf3Tk+oZVARtcm3IkVRDw0Anjw==
   dependencies:
     "@testing-library/dom" "^8.17.1"
     "@testing-library/user-event" "^13.5.0"
