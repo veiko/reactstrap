@@ -13,6 +13,11 @@ describe('Button', () => {
     testForChildrenInComponent(Button);
   });
 
+  it('should have accessible properties', async () => {
+    render(<Button>Home</Button>);
+    expect(screen.getByText('Home')).toBeAccessibleButton();
+  });
+
   it('should render custom element', () => {
     function Link(props) {
       return (
