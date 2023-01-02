@@ -157,4 +157,9 @@ describe('Alert', () => {
       {},
     );
   });
+
+  it('should have accessible properties', async () => {
+    render(<Alert>Yo!</Alert>);
+    expect(screen.getByText('Yo!')).toBeAccessibleAlert();
+  });
 });
